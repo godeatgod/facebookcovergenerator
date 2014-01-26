@@ -63,7 +63,13 @@ function postImageToFacebook( authToken, filename, mimeType, imageData, message 
     xhr.open( 'POST', 'https://graph.facebook.com/me/photos?access_token=' + authToken, true );
     xhr.onload = xhr.onerror = function() {
       var resp = JSON.parse(xhr.responseText);
-      if (resp.id) window.open("http://www.facebook.com/profile.php?preview_cover=" + resp.id, "_blank");
+      if (resp.id) {
+        $("#hidden-link").attr('href',"http://www.facebook.com/profile.php?preview_cover=" + resp.id);
+        var e = document.createEvent("MouseEvents");
+        e.initMouseEvent("click",true,true,window,0,0,0,0,0,true,false,false,true,0,null);
+        $("#hidden-link").get(0).dispatchEvent(e);
+        setTimeout(function(){window.getSelection().empty()},250);
+      }
     };
     xhr.setRequestHeader( "Content-Type", "multipart/form-data; boundary=" + boundary );
     xhr.sendAsBinary( formData );

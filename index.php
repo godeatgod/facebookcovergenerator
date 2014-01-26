@@ -69,7 +69,8 @@
 
     </div>
 
-    <div id="hidden" style="display:none"></div> 
+    <div id="hidden" style="display:none"></div>
+    <a id="hidden-link" href="" style="display:none"></a> 
 </body>
 
 </html>
