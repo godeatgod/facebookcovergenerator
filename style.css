@@ -121,12 +121,7 @@ table {
     font-size: 56px;
     text-align: center;
 }
-#first_line {
-    font-family: Cocaine;
-}
-#second_line {
-    font-family: Caviar;
-}
+
 #separator {
     margin-top:-5px;
 }

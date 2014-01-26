@@ -13,13 +13,6 @@
     <script src="assets/js/editor.js"></script>
     <script src="assets/js/base64binary.js"></script>
     <script src="assets/js/facebook.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function() {
-        $('#first_line').circleType({
-            radius: 384
-        });
-    });
-    </script>
 </head>
 
 <body>
@@ -36,25 +29,9 @@
 
             <div class="dark_bg"></div>
 
-            <svg xmlns='http://www.w3.org/2000/svg' width="851" height="315" id="cocaine_caviar">
-                <image x="0" y="0" width="851" height="315"  xlink:href="assets/img/paper_texture.png" />
+            <?php include 'assets/templates/crooks.php'; ?>
 
-                <defs>
-                    <style type="text/css"><![CDATA[
-                        text, textPath {
-                            text-anchor: middle;
-                        }
-                    ]]></style>
-                    <path id="arc" d="M 0,315 Q 400,-150 851,315" />
-                </defs>
-
-
-                <text x="426" y="50" ><textPath id="first_line" xlink:href="#arc">Cocaine</textPath></text>
-                <image xlink:href="assets/img/separator.svg" x="400" y="110" width="40" height="40" />
-                <text x="426" y="200" id="second_line">Caviar</text>
-                <text x="426" y="250" id="third_line" class="small_text">Crooks&Castles</text>
-                <text x="426" y="280" id="fourth_line" class="small_text">Est. 2002</text>
-            </svg>
+            <svg >
         </div>
 
         <div class="form">

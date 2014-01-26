@@ -62,7 +62,8 @@ function postImageToFacebook( authToken, filename, mimeType, imageData, message 
     var xhr = new XMLHttpRequest();
     xhr.open( 'POST', 'https://graph.facebook.com/me/photos?access_token=' + authToken, true );
     xhr.onload = xhr.onerror = function() {
-        console.log( xhr.responseText );
+      var resp = JSON.parse(xhr.responseText);
+      if (resp.id) window.open("http://www.facebook.com/profile.php?preview_cover=" + resp.id, "_blank");
     };
     xhr.setRequestHeader( "Content-Type", "multipart/form-data; boundary=" + boundary );
     xhr.sendAsBinary( formData );
